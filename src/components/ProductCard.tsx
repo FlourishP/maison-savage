@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Eye, Heart, Plus } from "lucide-react";
 import { useStore } from "@/context/StoreProvider";
 import type { Product } from "@/data/types";
-import { formatCurrency, cn } from "@/lib/utils";
+import { formatCurrency, cn, printTextureClass } from "@/lib/utils";
 import { printLabel } from "@/components/textures";
 
 interface ProductCardProps {
@@ -29,7 +29,7 @@ export function ProductCard({ product, index }: ProductCardProps) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.96 }}
       transition={{ duration: 0.45, delay: Math.min(index % 4, 3) * 0.06, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative flex flex-col border border-cream/5 bg-charcoal transition-colors duration-500 hover:border-champagne/50"
+      className="group relative flex flex-col border border-[#D4AF37]/30 bg-charcoal transition-colors duration-500 hover:border-champagne/60"
     >
       <div className="relative aspect-[3/4] overflow-hidden bg-obsidian">
         <Image
@@ -39,15 +39,29 @@ export function ProductCard({ product, index }: ProductCardProps) {
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           className="object-cover object-top transition-all duration-700 ease-out group-hover:scale-[1.08] group-hover:opacity-0"
         />
-        <Image
-          src={product.hoverImage}
-          alt=""
-          fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-          className="object-cover object-top opacity-0 transition-all duration-700 ease-out group-hover:scale-110 group-hover:opacity-100"
-          aria-hidden="true"
-        />
+        <div className="pointer-events-none absolute inset-0 opacity-0 transition-all duration-700 ease-out group-hover:scale-105 group-hover:opacity-100">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={product.hoverImage}
+            alt=""
+            aria-hidden="true"
+            className="h-full w-full object-cover object-center"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+          <span className="absolute inset-x-3 bottom-3 inline-flex w-max max-w-[calc(100%-1.5rem)] border border-[#D4AF37]/40 bg-black/70 px-2.5 py-1.5 text-[0.55rem] font-medium uppercase tracking-luxe text-champagne backdrop-blur-sm">
+            {product.animalPrintType === "none"
+              ? `Detail · ${product.category}`
+              : `${printLabel(product.animalPrintType)} · Macro`}
+          </span>
+        </div>
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+        <div
+          aria-hidden="true"
+          className={cn(
+            "pointer-events-none absolute inset-0 opacity-[0.05]",
+            printTextureClass(product.animalPrintType)
+          )}
+        />
 
         {product.featured && (
           <span className="absolute left-3 top-3 border border-champagne/40 bg-black/60 px-2.5 py-1 text-[0.55rem] font-medium uppercase tracking-luxe text-champagne backdrop-blur-sm">
@@ -91,14 +105,23 @@ export function ProductCard({ product, index }: ProductCardProps) {
         </button>
       </div>
 
-      <div className="flex flex-1 flex-col gap-1.5 p-4">
-        <p className="text-[0.55rem] uppercase tracking-luxe text-champagne/70">
-          {product.category} · {printLabel(product.animalPrintType)}
-        </p>
-        <h3 className="font-serif text-lg font-light leading-snug text-cream transition-colors group-hover:text-champagne">
-          {product.title}
-        </h3>
-        <p className="text-sm text-cream/70">{formatCurrency(product.price)}</p>
+      <div className="relative flex flex-1 flex-col gap-1.5 p-4">
+        <div
+          aria-hidden="true"
+          className={cn(
+            "pointer-events-none absolute inset-0 opacity-[0.06]",
+            printTextureClass(product.animalPrintType)
+          )}
+        />
+        <div className="relative flex flex-1 flex-col gap-1.5">
+          <p className="text-[0.55rem] uppercase tracking-luxe text-champagne/70">
+            {product.category} · {printLabel(product.animalPrintType)}
+          </p>
+          <h3 className="font-serif text-lg font-light leading-snug text-cream transition-colors group-hover:text-champagne">
+            {product.title}
+          </h3>
+          <p className="text-sm text-cream/70">{formatCurrency(product.price)}</p>
+        </div>
       </div>
     </motion.article>
   );

@@ -24,3 +24,20 @@ export function bodyScrollLock(locked: boolean): void {
 export function clamp(value: number, min: number, max: number): number {
   return Math.min(Math.max(value, min), max);
 }
+
+export function printTextureClass(print: string): string {
+  switch (print) {
+    case "cheetah":
+      return "print-texture print-cheetah";
+    case "leopard":
+      return "print-texture print-leopard";
+    case "python":
+      return "print-texture print-python";
+    case "zebra":
+      return "print-texture print-zebra";
+    case "jaguar":
+      return "print-texture print-jaguar";
+    default:
+      return "";
+  }
+}

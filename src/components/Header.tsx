@@ -59,8 +59,8 @@ export function Header() {
       )}
     >
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-champagne/40 to-transparent" />
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:h-20 sm:px-6 lg:px-8">
-        <div className="flex flex-1 items-center gap-2 lg:flex-none">
+      <div className="mx-auto grid h-16 max-w-7xl grid-cols-3 items-center gap-4 px-4 sm:h-20 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-2 justify-self-start">
           <button
             type="button"
             aria-label="Open menu"
@@ -70,13 +70,13 @@ export function Header() {
             <Menu className="h-6 w-6" strokeWidth={1.25} aria-hidden="true" />
           </button>
           <nav aria-label="Primary" className="hidden lg:block">
-            <ul className="flex items-center gap-7">
+            <ul className="flex items-center gap-6">
               {NAV_LINKS.map((link) => (
                 <li key={link.label}>
                   <button
                     type="button"
                     onClick={() => navigateToCategory(link)}
-                    className="text-[0.68rem] font-medium uppercase tracking-luxe text-cream/75 transition-colors hover:text-champagne"
+                    className="whitespace-nowrap px-1 py-2.5 text-[0.68rem] font-medium uppercase tracking-luxe text-cream/75 transition-colors hover:text-champagne"
                   >
                     {link.label}
                   </button>
@@ -89,12 +89,12 @@ export function Header() {
         <button
           type="button"
           onClick={() => navigateToCategory(NAV_LINKS[0])}
-          className="mx-auto lg:absolute lg:left-1/2 lg:-translate-x-1/2"
+          className="justify-self-center"
         >
           <BrandWordmark markClassName="h-8 w-8 sm:h-9 sm:w-9" />
         </button>
 
-        <div className="flex flex-1 items-center justify-end gap-1">
+        <div className="flex items-center justify-end gap-1 justify-self-end">
           <button
             type="button"
             aria-label="Search"

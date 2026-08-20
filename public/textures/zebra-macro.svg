@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <radialGradient id="vignette" cx="50%" cy="42%" r="78%">
+      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.13"/>
+      <stop offset="55%" stop-color="#0a0a0a" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.8"/>
+    </radialGradient>
+    <pattern id="stripe" width="260" height="260" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="#d4af37" stroke-opacity="0.55" stroke-width="14">
+        <path d="M52 0 C 80 60, 28 120, 52 180 C 76 236, 44 252, 52 260"/>
+        <path d="M130 0 C 104 60, 156 120, 132 180 C 108 236, 140 252, 132 260"/>
+        <path d="M208 0 C 236 60, 184 120, 208 180 C 232 236, 200 252, 208 260"/>
+      </g>
+    </pattern>
+  </defs>
+  <rect width="1200" height="800" fill="#0d0c0a"/>
+  <rect width="1200" height="800" fill="url(#stripe)"/>
+  <rect width="1200" height="800" fill="url(#vignette)"/>
+  <rect x="12" y="12" width="1176" height="776" fill="none" stroke="#d4af37" stroke-opacity="0.35" stroke-width="2"/>
+  <text x="600" y="760" text-anchor="middle" font-family="Georgia, serif" font-size="22" letter-spacing="12" fill="#d4af37" fill-opacity="0.65">ZEBRA STRIPE — MACRO DETAIL</text>
+</svg>

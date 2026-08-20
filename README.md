@@ -9,7 +9,7 @@ A dark, opulent luxury fashion e-commerce web app. Hand-rendered animal-print te
 - **Motion:** Framer Motion (`motion` + `AnimatePresence`)
 - **Icons:** Lucide React
 - **Fonts:** Cormorant Garamond (serif) + Jost (sans) via `next/font`
-- **Imagery:** Unsplash (remote, via `next/image`)
+- **Imagery:** Unsplash (remote, via `next/image`) + local deterministic SVG macro close-ups (`/public/textures`, rendered via plain `<img>`)
 - **State:** React Context with `localStorage` persistence
 - **Testing:** Playwright (Chromium, desktop + mobile) + Chrome DevTools MCP / Lighthouse
 
@@ -52,8 +52,10 @@ The production build is fully static for the `/` route.
 - Concierge newsletter with client-side email validation and success/error states
 - The Atelier section with brand statistics and craft copy
 - Multi-column luxury footer
-- Signature animal-print SVG textures (cheetah rosette, leopard spot, python scale, zebra stripe) rendered tone-on-tone
-- Fully responsive: 1-col (mobile) → 2-col (tablet) → 3/4-col (desktop); accessible focus/keyboard handling
+- Signature animal-print SVG textures (cheetah rosette, leopard spot, python scale, zebra stripe, jaguar) rendered tone-on-tone via Tailwind v4 `@utility` classes, with `border-[#D4AF37]/30` etched-gold borders on product cards and section dividers
+- Hover a product to reveal a macro close-up of its exact animal print, matched per product (`hoverImage`) and captioned `{print} · Macro`
+- Centered glassmorphism brand lock-up via a 3-column `grid-cols-3` header (nav left, brand center, actions right) that stays centered at every breakpoint
+- Fully responsive: 1-col (mobile) → 2-col (tablet) → 3/4-col (desktop); accessible focus/keyboard handling and ≥24px touch targets (a11y 100, desktop + mobile)
 
 ## API Reference
 
@@ -64,7 +66,7 @@ No public API endpoints. All data is bundled in `src/data/products.ts`.
 - `tests/e2e/desktop.spec.ts` — section render, hero navigation, category filtering, quick view, cart merge/quantity/remove, wishlist, search, concierge validation
 - `tests/e2e/mobile.spec.ts` — no horizontal overflow, mobile menu navigation, hero, quick view add-to-bag, concierge
 
-Lighthouse (desktop snapshot): Accessibility 100, Best Practices 100, SEO 100, Agentic Browsing 100 — 0 failing audits.
+Lighthouse: Accessibility 100, Best Practices 100, SEO 100, Agentic Browsing 100 on both desktop and mobile — 0 failing audits.
 
 ## Contributing
 

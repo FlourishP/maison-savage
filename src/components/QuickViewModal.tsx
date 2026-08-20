@@ -33,7 +33,7 @@ export function QuickViewModal() {
 
   if (!quickView) return null;
 
-  const images = [quickView.image, quickView.hoverImage];
+  const images = [quickView.image];
   const print = printLabel(quickView.animalPrintType);
   const wished = isWishlisted(quickView.id);
 

@@ -175,7 +175,7 @@ export function HeroSlider() {
         </span>
       </div>
 
-      <div className="absolute inset-x-0 bottom-0 z-10 flex gap-1.5 px-6 pb-5 sm:px-8">
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex gap-1.5 px-6 pb-1.5 sm:px-8">
         {HERO_SLIDES.map((s, i) => (
           <button
             key={s.id}
@@ -183,8 +183,9 @@ export function HeroSlider() {
             aria-label={`Go to slide ${i + 1}`}
             aria-current={i === index}
             onClick={() => goTo(i, i > index ? 1 : -1)}
-            className="group relative h-[2px] w-full max-w-[120px] overflow-hidden bg-cream/15"
+            className="group pointer-events-auto relative h-6 w-full max-w-[120px] overflow-hidden"
           >
+            <span className="pointer-events-none absolute inset-x-0 top-[calc(50%-1px)] h-[2px] bg-cream/15" />
             {i === index && (
               <motion.span
                 key={progressKey}
@@ -195,7 +196,7 @@ export function HeroSlider() {
                   ease: "linear",
                 }}
                 style={{ transformOrigin: "left" }}
-                className="absolute inset-0 bg-champagne"
+                className="pointer-events-none absolute left-0 top-[calc(50%-1px)] h-[2px] w-full bg-champagne"
               />
             )}
           </button>

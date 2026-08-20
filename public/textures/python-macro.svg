@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <radialGradient id="vignette" cx="50%" cy="45%" r="80%">
+      <stop offset="0%" stop-color="#d4af37" stop-opacity="0.15"/>
+      <stop offset="55%" stop-color="#0f0e0b" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.8"/>
+    </radialGradient>
+    <pattern id="scale" width="240" height="208" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="#d4af37" stroke-opacity="0.5" stroke-width="3.2">
+        <path d="M -48 104 a 120 104 0 0 1 240 0"/>
+        <path d="M 72 104 a 120 104 0 0 1 240 0"/>
+        <path d="M 192 104 a 120 104 0 0 1 240 0"/>
+        <path d="M -108 0 a 120 104 0 0 1 240 0"/>
+        <path d="M 12 0 a 120 104 0 0 1 240 0"/>
+        <path d="M 132 0 a 120 104 0 0 1 240 0"/>
+      </g>
+    </pattern>
+  </defs>
+  <rect width="1200" height="800" fill="#0f0f0d"/>
+  <rect width="1200" height="800" fill="url(#scale)"/>
+  <rect width="1200" height="800" fill="url(#vignette)"/>
+  <rect x="12" y="12" width="1176" height="776" fill="none" stroke="#d4af37" stroke-opacity="0.35" stroke-width="2"/>
+  <text x="600" y="760" text-anchor="middle" font-family="Georgia, serif" font-size="22" letter-spacing="12" fill="#d4af37" fill-opacity="0.65">PYTHON SCALE — MACRO DETAIL</text>
+</svg>

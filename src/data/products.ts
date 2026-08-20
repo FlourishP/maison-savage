@@ -1,7 +1,19 @@
-import type { Product, Slide } from "./types";
+import type { AnimalPrintType, Product, Slide } from "./types";
 
 const unsplash = (id: string, w = 1400) =>
   `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
+
+const textureMacro: Record<AnimalPrintType, string> = {
+  cheetah: "/textures/cheetah-macro.svg",
+  leopard: "/textures/leopard-macro.svg",
+  python: "/textures/python-macro.svg",
+  zebra: "/textures/zebra-macro.svg",
+  jaguar: "/textures/jaguar-macro.svg",
+  none: "",
+};
+
+const macroCrop = (id: string) =>
+  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=1400&h=1750&crop=entropy&q=80`;
 
 const apparelSizes = ["XS", "S", "M", "L", "XL", "XXL"];
 const shoeSizes = ["36", "37", "38", "39", "40", "41", "42"];
@@ -24,7 +36,7 @@ export const PRODUCTS: Product[] = [
     category: "Women's Runway",
     price: 12400,
     image: unsplash("1539109136881-3be0616acf4b"),
-    hoverImage: unsplash("1506629082955-511b1aa562c8"),
+    hoverImage: textureMacro.cheetah,
     animalPrintType: "cheetah",
     material: "Champagne silk charmeuse with hand-painted cheetah rosettes",
     description:
@@ -44,7 +56,7 @@ export const PRODUCTS: Product[] = [
     category: "Women's Runway",
     price: 6800,
     image: unsplash("1515886657613-9f3515b0c78f"),
-    hoverImage: unsplash("1594035910387-fea47794261f"),
+    hoverImage: textureMacro.leopard,
     animalPrintType: "leopard",
     material: "Leopard-print jacquard silk taffeta",
     description:
@@ -63,7 +75,7 @@ export const PRODUCTS: Product[] = [
     category: "Women's Runway",
     price: 9800,
     image: unsplash("1509631179647-0177331693ae"),
-    hoverImage: unsplash("1485827404703-89b55fcc595e"),
+    hoverImage: textureMacro.zebra,
     animalPrintType: "zebra",
     material: "Zebra-toned crushed velvet",
     description:
@@ -83,7 +95,7 @@ export const PRODUCTS: Product[] = [
     category: "Women's Runway",
     price: 5200,
     image: unsplash("1483985988355-763728e1935b"),
-    hoverImage: unsplash("1594035910387-fea47794261f"),
+    hoverImage: textureMacro.python,
     animalPrintType: "python",
     material: "Python-embossed satin",
     description:
@@ -102,7 +114,7 @@ export const PRODUCTS: Product[] = [
     category: "Men's Tailoring",
     price: 8650,
     image: unsplash("1617137968427-85924c800a22"),
-    hoverImage: unsplash("1516822003754-cca485356ecb"),
+    hoverImage: textureMacro.leopard,
     animalPrintType: "leopard",
     material: "Leopard jacquard virgin wool",
     description:
@@ -122,7 +134,7 @@ export const PRODUCTS: Product[] = [
     category: "Men's Tailoring",
     price: 9200,
     image: unsplash("1519085360753-af0119f7cbe7"),
-    hoverImage: unsplash("1617137968427-85924c800a22"),
+    hoverImage: textureMacro.zebra,
     animalPrintType: "zebra",
     material: "Midnight barathea with silk satin lapels",
     description:
@@ -141,7 +153,7 @@ export const PRODUCTS: Product[] = [
     category: "Men's Tailoring",
     price: 4200,
     image: unsplash("1520975954732-35dd22299614"),
-    hoverImage: unsplash("1617137968427-85924c800a22"),
+    hoverImage: textureMacro.cheetah,
     animalPrintType: "cheetah",
     material: "Etched cheetah-print wool twill",
     description:
@@ -160,7 +172,7 @@ export const PRODUCTS: Product[] = [
     category: "Men's Tailoring",
     price: 7400,
     image: unsplash("1516822003754-cca485356ecb"),
-    hoverImage: unsplash("1539008835657-9e8e9680c956"),
+    hoverImage: textureMacro.zebra,
     animalPrintType: "zebra",
     material: "Zebra herringbone cashmere",
     description:
@@ -180,7 +192,7 @@ export const PRODUCTS: Product[] = [
     category: "Handbags & Shoes",
     price: 11500,
     image: unsplash("1584917865442-de89df76afd3"),
-    hoverImage: unsplash("1560243563-062bfc001d68"),
+    hoverImage: textureMacro.cheetah,
     animalPrintType: "cheetah",
     material: "Cheetah-print calf leather, 18k gold hardware",
     description:
@@ -200,7 +212,7 @@ export const PRODUCTS: Product[] = [
     category: "Handbags & Shoes",
     price: 3900,
     image: unsplash("1610992015732-2449b76344bc"),
-    hoverImage: unsplash("1543163521-1bf539c55dd2"),
+    hoverImage: textureMacro.python,
     animalPrintType: "python",
     material: "Genuine python calf blend, blade heel",
     description:
@@ -220,7 +232,7 @@ export const PRODUCTS: Product[] = [
     category: "Handbags & Shoes",
     price: 2400,
     image: unsplash("1543163521-1bf539c55dd2"),
-    hoverImage: unsplash("1610992015732-2449b76344bc"),
+    hoverImage: textureMacro.python,
     animalPrintType: "python",
     material: "Python-print patent leather",
     description:
@@ -239,7 +251,7 @@ export const PRODUCTS: Product[] = [
     category: "Handbags & Shoes",
     price: 1600,
     image: unsplash("1552346154-21d32810aba3"),
-    hoverImage: unsplash("1595950653106-6c9ebd614d3a"),
+    hoverImage: macroCrop("1552346154-21d32810aba3"),
     animalPrintType: "none",
     material: "Matte calfskin with gold eyelets",
     description:
@@ -258,7 +270,7 @@ export const PRODUCTS: Product[] = [
     category: "Intimates & Lingerie",
     price: 2800,
     image: unsplash("1487222477894-8943e31ef7b2"),
-    hoverImage: unsplash("1544441893-675973e31985"),
+    hoverImage: textureMacro.leopard,
     animalPrintType: "leopard",
     material: "Leopard Chantilly lace and silk tulle",
     description:
@@ -278,7 +290,7 @@ export const PRODUCTS: Product[] = [
     category: "Intimates & Lingerie",
     price: 1950,
     image: unsplash("1544441893-675973e31985"),
-    hoverImage: unsplash("1487222477894-8943e31ef7b2"),
+    hoverImage: macroCrop("1544441893-675973e31985"),
     animalPrintType: "none",
     material: "22-momme washed silk",
     description:
@@ -297,7 +309,7 @@ export const PRODUCTS: Product[] = [
     category: "High Jewelry",
     price: 48000,
     image: unsplash("1548036328-c9fa89d128fa"),
-    hoverImage: unsplash("1515562141207-7a88fb7ce338"),
+    hoverImage: textureMacro.cheetah,
     animalPrintType: "cheetah",
     material: "18k gold, onyx, tsavorite, emerald eyes",
     description:
@@ -317,7 +329,7 @@ export const PRODUCTS: Product[] = [
     category: "High Jewelry",
     price: 9800,
     image: unsplash("1515562141207-7a88fb7ce338"),
-    hoverImage: unsplash("1548036328-c9fa89d128fa"),
+    hoverImage: macroCrop("1515562141207-7a88fb7ce338"),
     animalPrintType: "none",
     material: "18k yellow gold",
     description:
@@ -335,8 +347,8 @@ export const PRODUCTS: Product[] = [
     title: "Vermeil Eclipse Earrings",
     category: "High Jewelry",
     price: 6400,
-    image: unsplash("1617038220319-276d3cfab638"),
-    hoverImage: unsplash("1523275335684-37898b6baf30"),
+image: unsplash("1617038220319-276d3cfab638"),
+    hoverImage: textureMacro.leopard,
     animalPrintType: "leopard",
     material: "18k vermeil, black spinel",
     description:
@@ -355,7 +367,7 @@ export const PRODUCTS: Product[] = [
     category: "High Jewelry",
     price: 21000,
     image: unsplash("1523170335258-f5ed11844a49"),
-    hoverImage: unsplash("1523275335684-37898b6baf30"),
+    hoverImage: textureMacro.python,
     animalPrintType: "python",
     material: "40 mm 18k gold case, python-pattern dial",
     description:
@@ -375,7 +387,7 @@ export const PRODUCTS: Product[] = [
     category: "Everyday Essentials",
     price: 5600,
     image: unsplash("1617127365659-c47fa864d8bc"),
-    hoverImage: unsplash("1539008835657-9e8e9680c956"),
+    hoverImage: textureMacro.cheetah,
     animalPrintType: "cheetah",
     material: "Cheetah-print shearling-lined lambskin",
     description:
@@ -395,7 +407,7 @@ export const PRODUCTS: Product[] = [
     category: "Everyday Essentials",
     price: 480,
     image: unsplash("1541643600914-78b084683601"),
-    hoverImage: unsplash("1551028719-00167b16eac5"),
+    hoverImage: textureMacro.zebra,
     animalPrintType: "zebra",
     material: "Oud, saffron, smoked vanilla",
     description:
@@ -414,7 +426,7 @@ export const PRODUCTS: Product[] = [
     category: "Everyday Essentials",
     price: 520,
     image: unsplash("1551028719-00167b16eac5"),
-    hoverImage: unsplash("1541643600914-78b084683601"),
+    hoverImage: macroCrop("1551028719-00167b16eac5"),
     animalPrintType: "none",
     material: "Amber, leather, incense",
     description:
@@ -433,7 +445,7 @@ export const PRODUCTS: Product[] = [
     category: "Everyday Essentials",
     price: 2400,
     image: unsplash("1560243563-062bfc001d68"),
-    hoverImage: unsplash("1584917865442-de89df76afd3"),
+    hoverImage: textureMacro.python,
     animalPrintType: "python",
     material: "Python-printed Mongolian cashmere",
     description:
