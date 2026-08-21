@@ -59,8 +59,8 @@ export function Header() {
       )}
     >
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-champagne/40 to-transparent" />
-      <div className="mx-auto grid h-16 max-w-7xl grid-cols-3 items-center gap-4 px-4 sm:h-20 sm:px-6 lg:px-8">
-        <div className="flex items-center gap-2 justify-self-start">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:h-20 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-3">
           <button
             type="button"
             aria-label="Open menu"
@@ -68,6 +68,12 @@ export function Header() {
             className="-ml-2 flex h-11 w-11 items-center justify-center rounded-sm text-cream transition-colors hover:text-champagne lg:hidden"
           >
             <Menu className="h-6 w-6" strokeWidth={1.25} aria-hidden="true" />
+          </button>
+          <button
+            type="button"
+            onClick={() => navigateToCategory(NAV_LINKS[0])}
+          >
+            <BrandWordmark markClassName="h-8 w-8 sm:h-9 sm:w-9" />
           </button>
           <nav aria-label="Primary" className="hidden lg:block">
             <ul className="flex items-center gap-6">
@@ -86,15 +92,7 @@ export function Header() {
           </nav>
         </div>
 
-        <button
-          type="button"
-          onClick={() => navigateToCategory(NAV_LINKS[0])}
-          className="justify-self-center"
-        >
-          <BrandWordmark markClassName="h-8 w-8 sm:h-9 sm:w-9" />
-        </button>
-
-        <div className="flex items-center justify-end gap-1 justify-self-end">
+        <div className="flex items-center justify-end gap-1">
           <button
             type="button"
             aria-label="Search"

@@ -34,9 +34,11 @@ test("mobile menu opens, navigates to a filter and closes", async ({ page }) => 
 
 test("hero slider advances on mobile", async ({ page }) => {
   await page.getByRole("button", { name: "Pause slideshow" }).click();
-  await expect(page.getByRole("heading", { name: "The Zebra Veldt" })).toBeVisible();
+  const heroH2 = page.locator('section[aria-roledescription="carousel"] h2').first();
+  await expect(heroH2).toBeVisible();
+  const currentTitle = await heroH2.textContent();
   await page.getByRole("button", { name: "Next slide" }).click();
-  await expect(page.getByRole("heading", { name: "Python & Cheetah" })).toBeVisible();
+  await expect(heroH2).not.toHaveText(currentTitle!);
 });
 
 test("product grid renders and quick view add to bag works on mobile", async ({

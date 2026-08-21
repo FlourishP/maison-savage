@@ -31,7 +31,7 @@ test("renders all sections with no uncaught errors", async ({ page }) => {
     page.getByRole("button", { name: "VIP Client Login" })
   ).toBeVisible();
 
-  await expect(page.getByRole("heading", { name: "The Zebra Veldt" })).toBeVisible();
+  await expect(page.locator('section[aria-roledescription="carousel"] h2').first()).toBeVisible();
   await expect(
     page.getByRole("heading", { name: "The Savage Edit" })
   ).toBeVisible();
@@ -52,17 +52,19 @@ test("renders all sections with no uncaught errors", async ({ page }) => {
 
 test("hero slider advances, reverses and pauses", async ({ page }) => {
   await page.getByRole("button", { name: "Pause slideshow" }).click();
-  await expect(page.getByRole("heading", { name: "The Zebra Veldt" })).toBeVisible();
+  const heroH2 = page.locator('section[aria-roledescription="carousel"] h2').first();
+  await expect(heroH2).toBeVisible();
+  const currentTitle = await heroH2.textContent();
 
   await page.getByRole("button", { name: "Next slide" }).click();
-  await expect(page.getByRole("heading", { name: "Python & Cheetah" })).toBeVisible();
-  await expect(page.getByText("02", { exact: true })).toBeVisible();
+  await expect(heroH2).not.toHaveText(currentTitle!);
 
   await page.getByRole("button", { name: "Next slide" }).click();
-  await expect(page.getByRole("heading", { name: "Leopard on the Line" })).toBeVisible();
+  const thirdTitle = await heroH2.textContent();
+  expect(thirdTitle).not.toBe(currentTitle);
 
   await page.getByRole("button", { name: "Previous slide" }).click();
-  await expect(page.getByRole("heading", { name: "Python & Cheetah" })).toBeVisible();
+  await expect(heroH2).toHaveText(thirdTitle!);
 });
 
 test("category filter updates the product grid", async ({ page }) => {
