@@ -106,27 +106,27 @@ export function HeroSlider() {
               transition={{ duration: 0.9, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
               className="max-w-2xl"
             >
-              <p className="mb-4 flex items-center gap-3 text-[0.68rem] font-medium uppercase tracking-luxe text-champagne">
+              <p className="mb-4 flex items-center gap-3 font-label-sm uppercase tracking-luxe text-champagne">
                 <span className="inline-block h-px w-10 bg-champagne/60" />
                 {slide.kicker}
               </p>
-              <h2 className="font-serif text-4xl font-light leading-[1.05] text-cream sm:text-6xl lg:text-7xl">
+              <h2 className="font-display-xl font-light leading-[1.05] text-cream sm:text-6xl lg:text-7xl">
                 {slide.title}
               </h2>
-              <p className="mt-5 max-w-md text-sm leading-relaxed text-cream/80 sm:text-base">
+              <p className="mt-5 max-w-md font-body-lg text-cream/80 sm:text-base">
                 {slide.copy}
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <button
                   type="button"
-                  className="group relative inline-flex items-center gap-3 border border-champagne/70 px-8 py-3.5 text-[0.7rem] font-medium uppercase tracking-luxe text-champagne transition-all duration-300 hover:border-champagne hover:bg-champagne hover:text-black"
+                  className="group relative inline-flex items-center gap-3 border border-champagne/70 px-8 py-3.5 font-label-sm uppercase tracking-luxe text-champagne transition-all duration-300 hover:border-champagne hover:bg-champagne hover:text-black"
                 >
                   {slide.cta}
                   <span className="transition-transform duration-300 group-hover:translate-x-1.5">
                     →
                   </span>
                 </button>
-                <span className="text-[0.65rem] uppercase tracking-luxe text-cream/50">
+                <span className="font-label-sm uppercase tracking-luxe text-cream/50">
                   {printLabel(slide.print)} motif
                 </span>
               </div>
@@ -166,11 +166,11 @@ export function HeroSlider() {
         </button>
       </div>
 
-      <div className="absolute bottom-9 left-6 z-10 hidden flex-col items-start gap-2 font-serif text-cream/70 sm:flex sm:left-8">
-        <span className="text-4xl font-light text-champagne">
+      <div className="absolute bottom-9 left-6 z-10 hidden flex-col items-start gap-2 font-manrope text-cream/70 sm:flex sm:left-8">
+        <span className="text-display-xl font-light text-champagne">
           {String(index + 1).padStart(2, "0")}
         </span>
-        <span className="text-sm tracking-widest text-cream/40">
+        <span className="font-label-sm text-cream/40">
           / {String(n).padStart(2, "0")}
         </span>
       </div>

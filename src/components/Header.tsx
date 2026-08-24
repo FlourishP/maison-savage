@@ -52,10 +52,10 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
+        "fixed inset-x-0 top-0 z-50 transition-all duration-300 glass-nav",
         scrolled
-          ? "bg-black/90 shadow-[0_10px_40px_-18px_rgba(0,0,0,0.9)] backdrop-blur-md"
-          : "bg-black/70 backdrop-blur-md"
+          ? "shadow-[0_10px_40px_-18px_rgba(0,0,0,0.9)]"
+          : ""
       )}
     >
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-champagne/40 to-transparent" />
@@ -82,7 +82,7 @@ export function Header() {
                   <button
                     type="button"
                     onClick={() => navigateToCategory(link)}
-                    className="whitespace-nowrap px-1 py-2.5 text-[0.68rem] font-medium uppercase tracking-luxe text-cream/75 transition-colors hover:text-champagne"
+                    className="whitespace-nowrap px-1 py-2.5 font-label-sm uppercase tracking-luxe text-cream/75 transition-colors hover:text-champagne"
                   >
                     {link.label}
                   </button>
@@ -104,7 +104,7 @@ export function Header() {
           <button
             type="button"
             aria-label="VIP Client Login"
-            className="ml-1 hidden items-center gap-2 border border-champagne/25 bg-transparent px-4 py-2 text-[0.65rem] font-medium uppercase tracking-luxe text-champagne transition-all hover:border-champagne/60 hover:bg-champagne/10 sm:flex"
+            className="ml-1 hidden items-center gap-2 border border-champagne/25 bg-transparent px-4 py-2 font-label-sm uppercase tracking-luxe text-champagne transition-all hover:border-champagne/60 hover:bg-champagne/10 sm:flex"
           >
             <UserRound className="h-4 w-4" strokeWidth={1.25} aria-hidden="true" />
             <span className="hidden md:inline">VIP Client</span>
@@ -124,7 +124,7 @@ export function Header() {
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                   aria-hidden="true"
-                  className="absolute -right-0.5 -top-0.5 flex h-5 min-w-5 items-center justify-center rounded-full border border-black/60 bg-champagne px-1 text-[0.6rem] font-semibold text-black"
+                  className="absolute -right-0.5 -top-0.5 flex h-5 min-w-5 items-center justify-center rounded-full border border-black/60 bg-champagne px-1 font-label-sm text-black"
                 >
                   {cartCount}
                 </motion.span>

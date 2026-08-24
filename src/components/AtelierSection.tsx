@@ -42,15 +42,15 @@ export function AtelierSection() {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7 }}
           >
-            <p className="mb-4 flex items-center gap-3 text-[0.65rem] font-medium uppercase tracking-luxe text-champagne">
+            <p className="mb-4 flex items-center gap-3 font-label-sm uppercase tracking-luxe text-champagne">
               <span className="inline-block h-px w-10 bg-champagne/50" />
               The Private Atelier
             </p>
-            <h2 className="font-serif text-4xl font-light leading-[1.05] text-cream sm:text-5xl lg:text-6xl">
+            <h2 className="font-display-xl text-display-xl font-light leading-[1.05] text-cream sm:text-5xl lg:text-6xl">
               Craft, not{" "}
               <span className="gold-gradient-text italic">production</span>
             </h2>
-            <p className="mt-6 max-w-lg text-sm leading-relaxed text-cream/70 sm:text-base">
+            <p className="mt-6 max-w-lg font-body-lg text-cream/70 sm:text-base">
               Every Maison Savage object passes through forty pairs of hands and
               a single signature. Nothing leaves the atelier until the head
               artisan is satisfied — which is rarely on the first day.
@@ -59,10 +59,10 @@ export function AtelierSection() {
             <div className="mt-10 grid grid-cols-2 gap-px bg-cream/10 sm:grid-cols-4 lg:grid-cols-2">
               {STATS.map((stat) => (
                 <div key={stat.label} className="bg-obsidian-soft p-5">
-                  <p className="font-serif text-4xl font-light text-champagne">
+                  <p className="font-display-xl font-light text-champagne">
                     {stat.value}
                   </p>
-                  <p className="mt-2 text-[0.6rem] uppercase tracking-luxe text-cream/50">
+                  <p className="mt-2 font-label-sm uppercase tracking-luxe text-cream/50">
                     {stat.label}
                   </p>
                 </div>
@@ -93,10 +93,10 @@ export function AtelierSection() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
                   <AnimalTexture name="rosettes" className="text-champagne/40" opacity={0.1} />
                   <figcaption className="absolute inset-x-0 bottom-0 p-6">
-                    <p className="font-serif text-xl font-light text-cream">
+                    <p className="font-headline-md font-light text-cream">
                       {img.label}
                     </p>
-                    <p className="mt-1 text-xs text-cream/60">{img.sub}</p>
+                    <p className="mt-1 font-body-md text-cream/60">{img.sub}</p>
                   </figcaption>
                 </div>
               </motion.figure>

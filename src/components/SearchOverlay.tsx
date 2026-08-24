@@ -98,11 +98,11 @@ export function SearchOverlay() {
 
               <div className="mt-4 min-h-[160px]">
                 {query.trim() === "" ? (
-                  <p className="py-10 text-center text-xs uppercase tracking-luxe text-cream/40">
+                  <p className="py-10 text-center font-label-sm uppercase tracking-luxe text-cream/40">
                     Type to search collections, materials and objects
                   </p>
                 ) : results.length === 0 ? (
-                  <p className="py-10 text-center text-xs uppercase tracking-luxe text-cream/50">
+                  <p className="py-10 text-center font-label-sm uppercase tracking-luxe text-cream/50">
                     No objects found for “{query.trim()}”
                   </p>
                 ) : (
@@ -132,14 +132,14 @@ export function SearchOverlay() {
                             />
                           </div>
                           <div className="min-w-0 flex-1">
-                            <p className="truncate font-serif text-base text-cream transition-colors group-hover:text-champagne">
+                            <p className="truncate font-serif text-headline-md text-cream transition-colors group-hover:text-champagne">
                               {product.title}
                             </p>
-                            <p className="mt-0.5 text-[0.6rem] uppercase tracking-luxe text-cream/40">
+                            <p className="mt-0.5 font-label-sm uppercase tracking-luxe text-cream/40">
                               {product.category} · {printLabel(product.animalPrintType)}
                             </p>
                           </div>
-                          <span className="shrink-0 text-sm text-champagne">
+                          <span className="shrink-0 font-body-md text-champagne">
                             {formatCurrency(product.price)}
                           </span>
                         </button>

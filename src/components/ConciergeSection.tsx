@@ -59,15 +59,15 @@ export function ConciergeSection() {
             <span className="mx-auto mb-6 flex h-14 w-14 items-center justify-center border border-champagne/40 text-champagne">
               <Mail className="h-6 w-6" strokeWidth={1.25} aria-hidden="true" />
             </span>
-            <p className="mx-auto mb-3 flex items-center justify-center gap-3 text-[0.65rem] font-medium uppercase tracking-luxe text-champagne">
+            <p className="mx-auto mb-3 flex items-center justify-center gap-3 font-label-sm uppercase tracking-luxe text-champagne">
               <span className="inline-block h-px w-8 bg-champagne/50" />
               The Private Concierge
               <span className="inline-block h-px w-8 bg-champagne/50" />
             </p>
-            <h2 className="font-serif text-3xl font-light leading-tight text-cream sm:text-4xl lg:text-5xl">
+            <h2 className="font-display-xl text-display-xl font-light leading-tight text-cream sm:text-4xl lg:text-5xl">
               Enter the Savage Inner Circle
             </h2>
-            <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-cream/60">
+            <p className="mx-auto mt-4 max-w-md font-body-md text-cream/60">
               Private appointments, first access to icons, and a concierge on
               call around the clock. Share a dress size and your nearest City of
               Light.
@@ -89,7 +89,7 @@ export function ConciergeSection() {
                   }}
                   placeholder="your@email.com"
                   className={cn(
-                    "min-w-0 flex-1 border bg-black/60 px-4 py-3.5 text-sm text-cream outline-none transition-colors placeholder:text-cream/30",
+                    "min-w-0 flex-1 border bg-black/60 px-4 py-3.5 font-body-md text-cream outline-none transition-colors placeholder:text-cream/30",
                     form.status === "error"
                       ? "border-red-400/70"
                       : "border-cream/25 focus:border-champagne"
@@ -98,7 +98,7 @@ export function ConciergeSection() {
                 <button
                   type="submit"
                   disabled={form.status === "submitting"}
-                  className="inline-flex items-center justify-center gap-2 border border-champagne bg-champagne px-7 py-3.5 text-[0.65rem] font-semibold uppercase tracking-luxe text-black transition-all duration-300 hover:bg-transparent hover:text-champagne disabled:cursor-not-allowed disabled:opacity-60"
+                  className="inline-flex items-center justify-center gap-2 border border-champagne bg-champagne px-7 py-3.5 font-label-sm uppercase tracking-luxe text-black transition-all duration-300 hover:bg-transparent hover:text-champagne disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {form.status === "submitting" ? (
                     <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />

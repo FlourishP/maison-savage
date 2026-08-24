@@ -13,12 +13,35 @@
   --color-cream-dim: #c9c4b8;
   --color-smoke: #8a8a8a;
 
-  --font-serif: var(--font-cormorant), ui-serif, Georgia, "Times New Roman", serif;
-  --font-sans: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-bodoni-moda), ui-serif, Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
 
   --animate-slow-zoom: slow-zoom 12s ease-out forwards;
   --animate-marquee: marquee 30s linear infinite;
   --animate-shimmer: shimmer 2.75s linear infinite;
+
+  /* Stitch design system typography — Bodoni Moda + Manrope scale */
+  --font-display-xl: var(--font-bodoni-moda);
+  --font-headline-lg: var(--font-bodoni-moda);
+  --font-headline-md: var(--font-bodoni-moda);
+  --font-body-lg: var(--font-manrope);
+  --font-body-md: var(--font-manrope);
+  --font-label-sm: var(--font-manrope);
+
+  /* Stitch typography sizes */
+  --text-display-xl: 4.5rem;       /* 72px */
+  --text-display-xl-line: 5rem;    /* 80px */
+  --text-display-xl-tracking: -0.02em;
+  --text-headline-lg: 3rem;        /* 48px */
+  --text-headline-lg-line: 3.5rem; /* 56px */
+  --text-headline-md: 2rem;        /* 32px */
+  --text-headline-md-line: 2.5rem; /* 40px */
+  --text-body-lg: 1.125rem;        /* 18px */
+  --text-body-lg-line: 1.75rem;    /* 28px */
+  --text-body-md: 1rem;            /* 16px */
+  --text-body-md-line: 1.5rem;     /* 24px */
+  --text-label-sm: 0.75rem;        /* 12px */
+  --text-label-sm-line: 1rem;      /* 16px */
 
   --shadow-glow: 0 0 40px -10px rgba(212, 175, 55, 0.35);
   --shadow-luxe: 0 30px 80px -20px rgba(0, 0, 0, 0.85);
@@ -121,6 +144,67 @@
   box-shadow:
     inset 0 0 0 1px rgba(212, 175, 55, 0.2),
     0 0 34px -8px rgba(212, 175, 55, 0.5);
+}
+
+/* Stitch typography — match the design system's semantic font classes */
+.font-display-xl {
+  font-family: var(--font-bodoni-moda);
+  font-size: 4.5rem;
+  line-height: 5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.font-headline-lg {
+  font-family: var(--font-bodoni-moda);
+  font-size: 3rem;
+  line-height: 3.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.font-headline-md {
+  font-family: var(--font-bodoni-moda);
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+.font-body-lg {
+  font-family: var(--font-manrope);
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+.font-body-md {
+  font-family: var(--font-manrope);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+.font-body-sm {
+  font-family: var(--font-manrope);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+}
+.font-label-sm {
+  font-family: var(--font-manrope);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+/* Stitch signature divider — gold gradient line */
+@utility signature-divider {
+  height: 1px;
+  background: linear-gradient(90deg, #0a0a0a 0%, #d4af37 50%, #0a0a0a 100%);
+}
+
+/* Stitch glass-nav — exact backdrop filter values */
+@utility glass-nav {
+  background-color: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 @utility gold-gradient-text {

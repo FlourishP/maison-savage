@@ -60,7 +60,7 @@ export function BrandWordmark({ className, markClassName }: BrandWordmarkProps) 
         <span className="font-serif text-xl font-semibold tracking-titan text-cream uppercase sm:text-2xl">
           Maison Savage
         </span>
-        <span className="mt-1 text-[0.6rem] font-medium tracking-luxe text-champagne/80 uppercase">
+        <span className="mt-1 font-label-sm uppercase tracking-luxe text-champagne/80">
           The Savage Haute Couture
         </span>
       </span>

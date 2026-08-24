@@ -118,10 +118,10 @@ export function QuickViewModal() {
             <div className="flex flex-col p-6 sm:p-8">
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <p className="text-[0.6rem] uppercase tracking-luxe text-champagne">
+                  <p className="font-label-sm uppercase tracking-luxe text-champagne">
                     {quickView.category} · {print}
                   </p>
-                  <h3 className="mt-2 font-serif text-3xl font-light leading-snug text-cream sm:text-4xl">
+                  <h3 className="mt-2 font-display-xl text-headline-lg font-light leading-snug text-cream sm:text-4xl">
                     {quickView.title}
                   </h3>
                 </div>
@@ -146,20 +146,20 @@ export function QuickViewModal() {
                 </button>
               </div>
 
-              <p className="mt-4 font-serif text-2xl text-champagne">
+              <p className="mt-4 font-display-xl font-light text-cream sm:text-3xl">
                 {formatCurrency(quickView.price)}
               </p>
 
-              <p className="mt-4 text-sm leading-relaxed text-cream/70">
+              <p className="mt-4 font-body-md leading-relaxed text-cream/70">
                 {quickView.description}
               </p>
 
-              <p className="mt-4 border-l-2 border-champagne/40 pl-3 text-xs italic text-cream/60">
+              <p className="mt-4 border-l-2 border-champagne/40 pl-3 font-body-sm italic text-cream/60">
                 {quickView.material}
               </p>
 
               <div className="mt-5">
-                <p className="text-[0.6rem] font-medium uppercase tracking-luxe text-cream/50">
+                <p className="font-label-sm uppercase tracking-luxe text-cream/50">
                   Select size
                 </p>
                 <div className="mt-2 flex flex-wrap gap-2">
@@ -170,10 +170,10 @@ export function QuickViewModal() {
                       aria-pressed={selectedSize === size}
                       onClick={() => setSelectedSize(size)}
                       className={cn(
-                        "min-w-12 border px-3 py-2.5 text-xs tracking-wider transition-all",
+                        "min-w-12 border border-cream/20 px-3 py-2.5 font-label-sm tracking-wider transition-all",
                         selectedSize === size
                           ? "border-champagne bg-champagne text-black"
-                          : "border-cream/20 text-cream/70 hover:border-champagne/50 hover:text-champagne"
+                          : "text-cream/70 hover:border-champagne/50 hover:text-champagne"
                       )}
                     >
                       {size}
@@ -185,13 +185,13 @@ export function QuickViewModal() {
               <button
                 type="button"
                 onClick={handleAdd}
-                className="mt-6 flex w-full items-center justify-center gap-3 border border-champagne bg-champagne px-6 py-4 text-[0.7rem] font-semibold uppercase tracking-luxe text-black transition-all duration-300 hover:bg-transparent hover:text-champagne"
+                className="mt-6 flex w-full items-center justify-center gap-3 border border-champagne bg-champagne px-6 py-4 font-label-sm uppercase tracking-luxe text-black transition-all duration-300 hover:bg-transparent hover:text-champagne"
               >
                 <ShoppingBag className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
                 Add to Bag — {formatCurrency(quickView.price)}
               </button>
 
-              <ul className="mt-6 grid grid-cols-1 gap-2 text-xs text-cream/60">
+              <ul className="mt-6 grid grid-cols-1 gap-2 font-body-sm text-cream/60">
                 {quickView.details.map((detail) => (
                   <li key={detail} className="flex items-start gap-2">
                     <span className="mt-1.5 h-px w-3 shrink-0 bg-champagne/50" />
@@ -200,7 +200,7 @@ export function QuickViewModal() {
                 ))}
               </ul>
 
-              <div className="mt-6 flex flex-col gap-2 border-t border-cream/10 pt-5 text-[0.65rem] uppercase tracking-luxe text-cream/40 sm:flex-row sm:gap-6">
+              <div className="mt-6 flex flex-col gap-2 border-t border-cream/10 pt-5 font-label-sm uppercase tracking-luxe text-cream/40 sm:flex-row sm:gap-6">
                 <span className="inline-flex items-center gap-2">
                   <Truck className="h-4 w-4 text-champagne/70" aria-hidden="true" />
                   Complimentary worldwide delivery

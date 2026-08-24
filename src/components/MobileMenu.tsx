@@ -100,7 +100,7 @@ export function MobileMenu() {
                       onClick={() => go(link)}
                       className="group flex w-full items-center justify-between border-b border-cream/5 py-3.5 text-left"
                     >
-                      <span className="font-serif text-2xl font-light tracking-wide text-cream transition-colors group-hover:text-champagne">
+                      <span className="font-serif text-headline-md font-light tracking-wide text-cream transition-colors group-hover:text-champagne">
                         {link.label}
                       </span>
                       <span className="text-champagne/50 opacity-0 transition-opacity group-hover:opacity-100">
@@ -113,7 +113,7 @@ export function MobileMenu() {
             </nav>
 
             <div className="mt-auto space-y-6">
-              <div className="flex items-center gap-4 pt-6 text-cream/60">
+              <div className="flex items-center gap-4 font-body-sm text-cream/60">
                 <a
                   href="https://instagram.com"
                   aria-label="Instagram"
@@ -136,7 +136,7 @@ export function MobileMenu() {
                   <Share2 className="h-5 w-5" strokeWidth={1.25} aria-hidden="true" />
                 </a>
               </div>
-              <div className="border-t border-cream/10 pt-6 text-[0.6rem] uppercase tracking-luxe text-cream/40">
+              <div className="border-t border-cream/10 pt-6 font-label-sm uppercase tracking-luxe text-cream/40">
                 Paris · New York · Tokyo · Dubai
               </div>
               <AnimalTexture name="rosettes" opacity={0.07} className="text-champagne" />

@@ -48,7 +48,7 @@ export function ProductCard({ product, index }: ProductCardProps) {
             className="h-full w-full object-cover object-center"
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
-          <span className="absolute inset-x-3 bottom-3 inline-flex w-max max-w-[calc(100%-1.5rem)] border border-[#D4AF37]/40 bg-black/70 px-2.5 py-1.5 text-[0.55rem] font-medium uppercase tracking-luxe text-champagne backdrop-blur-sm">
+          <span className="absolute inset-x-3 bottom-3 inline-flex w-max max-w-[calc(100%-1.5rem)] border border-[#D4AF37]/40 bg-black/70 px-2.5 py-1.5 font-label-sm uppercase tracking-luxe text-champagne backdrop-blur-sm">
             {product.animalPrintType === "none"
               ? `Detail · ${product.category}`
               : `${printLabel(product.animalPrintType)} · Macro`}
@@ -64,7 +64,7 @@ export function ProductCard({ product, index }: ProductCardProps) {
         />
 
         {product.featured && (
-          <span className="absolute left-3 top-3 border border-champagne/40 bg-black/60 px-2.5 py-1 text-[0.55rem] font-medium uppercase tracking-luxe text-champagne backdrop-blur-sm">
+          <span className="absolute left-3 top-3 border border-champagne/40 bg-black/60 px-2.5 py-1 font-label-sm uppercase tracking-luxe text-champagne backdrop-blur-sm">
             Maison Icon
           </span>
         )}
@@ -88,7 +88,7 @@ export function ProductCard({ product, index }: ProductCardProps) {
           <button
             type="button"
             onClick={() => addToCart(product, defaultSize)}
-            className="flex w-full items-center justify-center gap-2 border border-champagne bg-champagne/95 px-4 py-3 text-[0.65rem] font-semibold uppercase tracking-luxe text-black transition-colors hover:bg-champagne"
+            className="flex w-full items-center justify-center gap-2 border border-champagne bg-champagne/95 px-4 py-3 font-label-sm uppercase tracking-luxe text-black transition-colors hover:bg-champagne"
           >
             <Plus className="h-4 w-4" strokeWidth={1.5} aria-hidden="true" />
             Add to Bag
@@ -114,13 +114,13 @@ export function ProductCard({ product, index }: ProductCardProps) {
           )}
         />
         <div className="relative flex flex-1 flex-col gap-1.5">
-          <p className="text-[0.55rem] uppercase tracking-luxe text-champagne/70">
+          <p className="font-label-sm uppercase tracking-luxe text-champagne/70">
             {product.category} · {printLabel(product.animalPrintType)}
           </p>
-          <h3 className="font-serif text-lg font-light leading-snug text-cream transition-colors group-hover:text-champagne">
+          <h3 className="font-display-xl text-headline-md font-light leading-snug text-cream transition-colors group-hover:text-champagne">
             {product.title}
           </h3>
-          <p className="text-sm text-cream/70">{formatCurrency(product.price)}</p>
+          <p className="font-body-md text-cream/70">{formatCurrency(product.price)}</p>
         </div>
       </div>
     </motion.article>

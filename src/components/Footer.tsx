@@ -19,7 +19,7 @@ const SOCIALS = [
 function LinkColumn({ title, links }: { title: string; links: string[] }) {
   return (
     <div>
-      <h3 className="mb-4 text-[0.65rem] font-semibold uppercase tracking-luxe text-champagne">
+      <h3 className="mb-4 font-label-sm uppercase tracking-luxe text-champagne">
         {title}
       </h3>
       <ul className="space-y-2.5">
@@ -27,7 +27,7 @@ function LinkColumn({ title, links }: { title: string; links: string[] }) {
           <li key={link}>
             <a
               href="#"
-              className="text-sm text-cream/55 transition-colors hover:text-champagne"
+              className="font-body-md text-cream/55 transition-colors hover:text-champagne"
             >
               {link}
             </a>
@@ -47,11 +47,11 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-6">
           <div className="col-span-2 lg:col-span-1">
             <BrandWordmark markClassName="h-9 w-9" className="-ml-1" />
-            <p className="mt-5 max-w-[240px] text-xs leading-relaxed text-cream/45">
+            <p className="mt-5 max-w-[240px] font-body-md text-cream/45">
               The Savage Haute Couture. Fashioned in Paris since 1964, worn
               wherever the night refuses to end.
             </p>
-            <div className="mt-6 space-y-1 text-[0.6rem] uppercase tracking-luxe text-cream/40">
+            <div className="mt-6 space-y-1 font-label-sm uppercase tracking-luxe text-cream/40">
               <p>Rue Saint-Honoré 390</p>
               <p>Paris, 75001 France</p>
             </div>
@@ -63,7 +63,7 @@ export function Footer() {
           <LinkColumn title="Legal" links={LEGAL} />
 
           <div>
-            <h3 className="mb-4 text-[0.65rem] font-semibold uppercase tracking-luxe text-champagne">
+            <h3 className="mb-4 font-label-sm uppercase tracking-luxe text-champagne">
               Socials
             </h3>
             <ul className="flex flex-col gap-3">
@@ -71,7 +71,7 @@ export function Footer() {
                 <li key={label}>
                   <a
                     href="#"
-                    className="inline-flex items-center gap-3 text-sm text-cream/55 transition-colors hover:text-champagne"
+                    className="inline-flex items-center gap-3 font-body-md text-cream/55 transition-colors hover:text-champagne"
                   >
                     <Icon className="h-4 w-4" strokeWidth={1.25} aria-hidden="true" />
                     {label}
@@ -82,7 +82,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-cream/10 pt-8 text-[0.6rem] uppercase tracking-luxe text-cream/35 sm:flex-row">
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-cream/10 pt-8 font-label-sm uppercase tracking-luxe text-cream/35 sm:flex-row">
           <p>© {new Date().getFullYear()} Maison Savage. All rights reserved.</p>
           <p className="font-serif italic normal-case tracking-normal text-cream/40">
             The Savage Haute Couture
